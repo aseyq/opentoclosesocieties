@@ -20,8 +20,7 @@ for (subfolder in subfolders) {
   
   # Combine all CSVs using readr::read_csv and purrr::map_dfr
   combined_df <- map_dfr(csv_files, ~ read_csv(.x, show_col_types = FALSE) %>%
-                           mutate(source_folder = folder_name))  %>% 
-                        filter(round <= 151)
+                           mutate(source_folder = folder_name))
   
   # Save the combined CSV
   output_path <- file.path(processed_dir, paste0(folder_name, ".csv"))
