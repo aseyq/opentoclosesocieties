@@ -6,9 +6,11 @@ This repository contains the agent-based simulation (Python) together with R scr
 
 There are two ways to use this repository:
 
-1. **Reproduce the figures from the simulation data shipped with the repo.** All raw simulation outputs used in the paper are included under `datacloud/processed/`. The simulations themselves with 1000 iterations might take from several hours to days. However you can regenerate every figure and table without re-running the simulation using the pre-processed data. This only requires R. See [Reproducing the figures from the included data](#reproducing-the-figures-from-the-included-data).
+1. **Run the agent-based simulations from scratch.**  See [Running the simulation](#running-the-simulation).
+Plaese note that running the simulations from scratch with 1000 iterations might take from several hours to days depending on the (parallel) computing power of your setup. 
+2. **Reproduce the figures and tables from pre-ran simulation data** Simulation outputs used in the paper are included under `datacloud/processed/`.  See [Reproducing the figures from the included data](#reproducing-the-figures-from-the-included-data).
    
-2. **Re-run the agent-based simulation yourself.** You can regenerate the raw CSVs (or run new simulations with different parameters) using the Python model, and then feed the output into the same R pipeline. This requires Python. See [Running the simulation](#running-the-simulation).
+
 
 ## Repository structure
 
