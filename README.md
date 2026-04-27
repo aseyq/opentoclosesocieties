@@ -8,7 +8,7 @@ There are two ways to use this repository:
 
 1. **Run the agent-based simulations from scratch.**  See [Running the simulation](#running-the-simulation).
 Plaese note that running the simulations from scratch with 1000 iterations might take from several hours to days depending on the (parallel) computing power of your setup. 
-2. **Reproduce the figures and tables from pre-ran simulation data** Simulation outputs used in the paper are included under `datacloud/processed/`.  See [Reproducing the figures from pre-computed data](#reproducing-the-figures-from pre-computed-data).
+2. **Reproduce the figures and tables from pre-ran simulation data** Simulation outputs used in the paper are included under `datacloud/processed/`.  See [Reproducing the figures from pre-computed data](#reproducing-the-figures-from-pre-computed-data).
    
 
 
