@@ -1,4 +1,4 @@
-# opentoclosesocieties
+# From open to closed societies - agent based simulations
 Replication repository for 
 "From open to closed societies: Inequality, migration, and women's rights". Journal of Development Economics, 178, 103607. https://doi.org/10.1016/j.jdeveco.2025.103607
 
