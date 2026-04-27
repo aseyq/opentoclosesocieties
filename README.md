@@ -8,7 +8,7 @@ There are two ways to use this repository:
 
 1. **Run the agent-based simulations from scratch.**  See [Running the simulation](#running-the-simulation).
 Plaese note that running the simulations from scratch with 1000 iterations might take from several hours to days depending on the (parallel) computing power of your setup. 
-2. **Reproduce the figures and tables from pre-ran simulation data** Simulation outputs used in the paper are included under `datacloud/processed/`.  See [Reproducing the figures from the included data](#reproducing-the-figures-from-the-included-data).
+2. **Reproduce the figures and tables from pre-ran simulation data** Simulation outputs used in the paper are included under `datacloud/processed/`.  See [Reproducing the figures from pre-computed data](#reproducing-the-figures-from pre-computed-data).
    
 
 
@@ -120,7 +120,7 @@ Each subfolder of `datacloud/raw/` (and the corresponding processed CSV in `data
 
 All simulations use the default `switch_rule = "both"` (transitions in either direction are allowed for switchable communities). The `switchable_communities = [k]` mechanism in [code/simulation/commons/simulation.py](code/simulation/commons/simulation.py) creates community `k` as egalitarian and switchable, and forces all other communities to be non-switchable — set to patrilineal when `init_egalitarian = False` (lock-in) or kept egalitarian when `init_egalitarian = True` (no-domino). Community wealth ranks 1 (richest) to 7 (poorest) are assigned by the simulation based on initial commons endowments.
 
-## Reproducing the figures from the pre-computed data
+## Reproducing the figures from pre-computed data
 
 The repository ships with the full set of simulation outputs under `datacloud/process`, organized one folder per simulation setup(`baseline`, `assetpatri`, `domino1`–`domino7`, `lockin1`–`lockin7`). Each folder contains one CSV per simulation replicate.
 
