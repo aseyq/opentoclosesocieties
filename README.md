@@ -6,7 +6,7 @@ This repository contains the agent-based simulation (Python) together with R scr
 
 There are two ways to use this repository:
 
-1. **Reproduce the figures from the simulation data shipped with the repo.** All raw simulation outputs used in the paper are included under `datacloud/raw/` and `datacloud/processed/`. The simulations themselves with 1000 iterations might take from several hours to days. However you can regenerate every figure and table without re-running the simulation using the pre-processed data. This only requires R. See [Reproducing the figures from the included data](#reproducing-the-figures-from-the-included-data).
+1. **Reproduce the figures from the simulation data shipped with the repo.** All raw simulation outputs used in the paper are included under `datacloud/processed/`. The simulations themselves with 1000 iterations might take from several hours to days. However you can regenerate every figure and table without re-running the simulation using the pre-processed data. This only requires R. See [Reproducing the figures from the included data](#reproducing-the-figures-from-the-included-data).
    
 2. **Re-run the agent-based simulation yourself.** You can regenerate the raw CSVs (or run new experiments with different parameters) using the Python model, and then feed the output into the same R pipeline. This requires Python. See [Running the simulation](#running-the-simulation).
 
@@ -124,7 +124,7 @@ All experiments use the default `switch_rule = "both"` (transitions in either di
 The repository ships with the full set of raw simulation outputs under `datacloud/raw/`, organized one folder per experiment (`baseline`, `assetpatri`, `domino1`–`domino7`, `lockin1`–`lockin7`). Each folder contains one CSV per simulation replicate.
 
 
-1. **(optional) Combine raw CSVs into processed datasets.** Run
+1. **(only for raw data) Combine raw CSVs into processed datasets.** Run
 
    ```r
    source("code/analysis/combine_clouddata.R")
