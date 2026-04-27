@@ -5,6 +5,11 @@ class Matcher:
         self.agent = agent # linked object 
         self.agent.matcher = self
         self.prefs = agent.get_prefs_tuples(candidates)
+        # print(f"I am {self.agent.name} and i look like this:")
+        # print(self.agent)
+        # print(f"my preferences:")
+        # print(self.prefs)
+        # print("-" * 50)
         self.current_match = None
 
 class Proposee(Matcher):
@@ -101,5 +106,6 @@ def match_couples(men, women, proposer="men"):
 
         if proposer == "women":
             matchings.append((p.current_match.agent, p.agent, p.current_accepted_offer[1]))  # reversing men and women
-
+    # print("Matchings:")
+    # print(matchings)
     return matchings
