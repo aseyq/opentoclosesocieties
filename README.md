@@ -123,18 +123,7 @@ All simulations use the default `switch_rule = "both"` (transitions in either di
 
 The repository ships with the full set of raw simulation outputs under `datacloud/raw/`, organized one folder per simulation (`baseline`, `assetpatri`, `domino1`–`domino7`, `lockin1`–`lockin7`). Each folder contains one CSV per simulation replicate.
 
-
-1. **(only for raw data) Combine raw CSVs into processed datasets.** Run
-
-   ```r
-   source("code/analysis/combine_clouddata.R")
-   ```
-
-   This iterates over every subfolder of `datacloud/raw/`, concatenates the per-replicate CSVs, and writes one combined CSV per simulation to `datacloud/processed/`. The processed files (`baseline.csv`, `domino1.csv`, …) are what the figure scripts read.
-
-   The script [code/analysis/domino_lockin_clean.R](code/analysis/domino_lockin_clean.R) prepares the domino / lock-in by conditions by extracting data of the relevant community for plotting.
-
-2. **Generate the figures and tables.** Each script is self-contained and reads from `datacloud/processed/`:
+**Generate the figures and tables.** Each script is self-contained and reads from `datacloud/processed/`:
 
    ```r
    source("code/analysis/fig1-share_patrilineal.R")           # Share of unilineal communities 
@@ -143,7 +132,7 @@ The repository ships with the full set of raw simulation outputs under `dataclou
    source("code/analysis/fig4_gini.R")                        # Inequality / Gini 
    ```
 
-   Figures and summary tables (e.g. [figures/share_patrilineal_table.csv](figures/share_patrilineal_table.csv)) are written to [figures/](figures/).
+   Figures and summary tables are written to [figures/](figures/).
 
 
 
