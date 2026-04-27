@@ -120,9 +120,9 @@ Each subfolder of `datacloud/raw/` (and the corresponding processed CSV in `data
 
 All simulations use the default `switch_rule = "both"` (transitions in either direction are allowed for switchable communities). The `switchable_communities = [k]` mechanism in [code/simulation/commons/simulation.py](code/simulation/commons/simulation.py) creates community `k` as egalitarian and switchable, and forces all other communities to be non-switchable — set to patrilineal when `init_egalitarian = False` (lock-in) or kept egalitarian when `init_egalitarian = True` (no-domino). Community wealth ranks 1 (richest) to 7 (poorest) are assigned by the simulation based on initial commons endowments.
 
-## Reproducing the figures from the included data
+## Reproducing the figures from the pre-computed data
 
-The repository ships with the full set of raw simulation outputs under `datacloud/raw/`, organized one folder per simulation (`baseline`, `assetpatri`, `domino1`–`domino7`, `lockin1`–`lockin7`). Each folder contains one CSV per simulation replicate.
+The repository ships with the full set of simulation outputs under `datacloud/process`, organized one folder per simulation setup(`baseline`, `assetpatri`, `domino1`–`domino7`, `lockin1`–`lockin7`). Each folder contains one CSV per simulation replicate.
 
 **Generate the figures and tables.** Each script is self-contained and reads from `datacloud/processed/`:
 
