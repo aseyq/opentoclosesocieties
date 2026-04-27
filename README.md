@@ -35,7 +35,6 @@ opentoclosesocieties/
 │   │   └── tests/                 # Unit tests
 │   └── analysis/                  # R scripts for data prep & figures
 │       ├── combine_clouddata.R    # Combines raw per-run CSVs into processed datasets
-│       ├── domino_lockin_clean.R  # Cleans domino / lock-in simulation data
 │       ├── fig1-share_patrilineal.R
 │       ├── fig2-lockindomino.R
 │       ├── fig3_egalitarian_unilinealassets.R
