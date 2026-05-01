@@ -5,11 +5,7 @@ class Matcher:
         self.agent = agent # linked object 
         self.agent.matcher = self
         self.prefs = agent.get_prefs_tuples(candidates)
-        # print(f"I am {self.agent.name} and i look like this:")
-        # print(self.agent)
-        # print(f"my preferences:")
-        # print(self.prefs)
-        # print("-" * 50)
+
         self.current_match = None
 
 class Proposee(Matcher):
@@ -37,12 +33,6 @@ class Proposee(Matcher):
                     # But i like my match better
                     return None
                 if self.get_offer_rank(best_offer) < self.get_offer_rank(self.current_accepted_offer):
-                    #print("blocking pair")
-                    #print("me", self.agent.name)
-                    #print("best_offer:", best_offer)
-                    #print("current offer", self.current_accepted_offer)
-                    #print("-"*50)
-                    # No the best offer is better. So I will break the current matc
                     self.current_match.current_match = None
                     self.current_match.temporarily_matched = False
 
@@ -95,9 +85,6 @@ def match_couples(men, women, proposer="men"):
             pe.evaluate_offers()  
 
         unmatched_proposers = [p for p in proposers if not p.temporarily_matched]
-        #for p in proposees:
-        #if p.current_match:
-        #        print(p.agent.name, p.current_match.agent.name, p.current_accepted_offer[1].name)
 
     matchings = []
     for p in proposees:
@@ -106,6 +93,5 @@ def match_couples(men, women, proposer="men"):
 
         if proposer == "women":
             matchings.append((p.current_match.agent, p.agent, p.current_accepted_offer[1]))  # reversing men and women
-    # print("Matchings:")
-    # print(matchings)
+
     return matchings

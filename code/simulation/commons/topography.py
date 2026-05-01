@@ -37,6 +37,7 @@ class Topography:
                 self.distances.append({"communities": {community1, community2}, "distance": 0})
 
         if structure == "metric":
+            # This was implemented after a reviewer's suggestion
 
             for community in self.communities:
                 r = 2 * math.sqrt(random.uniform(0, 1))  # Random radius within the circle
@@ -61,23 +62,8 @@ class Topography:
                 # print(f"Connection: {community1.name} - {community2.name}", 
                 #       f"Distance: {self.get_distance(community1, community2)}")
                 
-            
-            
-
-    def get_connection_multiplier(self, community1, community2):
-        # level 0: no cost
-        # level 1: standard cost
-        # level 9999: extreme cost
-
-        if community1 == community2:
-            return 0
-        elif {community1, community2} in self.connections:
-            return 1
-        else:
-            return -1
         
     def get_distance(self, community1, community2):
-        #print(f"get_distance: {community1}, {community2}")
         if community1 == community2:
             return 0
         for distance_entry in self.distances:

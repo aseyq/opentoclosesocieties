@@ -1,6 +1,6 @@
 library(tidyverse)
 
-df_community <- read_csv(here::here("datacloud","processed", "baseline.csv"))
+df_community <- read_csv(here::here("data","processed", "baseline.csv"))
 
 df_community %>%
   group_by(round) %>%
@@ -11,6 +11,7 @@ df_community %>%
   #scale_y_continuous(breaks = seq(0, 1, 0.1)) +
   # make y scale percent
 scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
+  scale_x_continuous(breaks = seq(0, 150, by = 10)) +
   #scale_x_continuous(breaks = seq(0, num_round, num_cohort)) +
   geom_line() +
   theme_classic() +
@@ -20,7 +21,7 @@ scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
     labs(y = "Share of Unilineal Communities",
          x = "Round")
 
-ggsave("figures/share_patrilineal.png", width = 6, height = 5)
+ggsave("figures/share_patrilineal.png", width = 6, height = 3)
 
 max_round <- max(df_community$round)
 

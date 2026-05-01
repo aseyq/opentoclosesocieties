@@ -1,7 +1,7 @@
 library(tidyverse)
 library(patchwork)
 
-df_baseline <- read_csv(here::here("datacloud","processed", "baseline.csv"))
+df_baseline <- read_csv(here::here("data","processed", "baseline.csv"))
 
 plot_baseline <- df_baseline  %>% 
     mutate(community_rank = as.factor(community_rank)) %>%
@@ -27,7 +27,7 @@ plot_baseline <- df_baseline  %>%
 
 plot_baseline
 
-df_assetpatri <- read_csv(here::here("datacloud","processed", "assetpatri.csv"))
+df_assetpatri <- read_csv(here::here("data","processed", "assetpatri.csv"))
 
 plot_assetpatri <- df_assetpatri  %>% 
     mutate(community_rank = as.factor(community_rank)) %>%

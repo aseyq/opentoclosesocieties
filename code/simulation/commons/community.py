@@ -127,8 +127,6 @@ class Community:
             members = self.get_member_size()
             if members == 0:
                 return self.endowment
-            # this was the previous version but it makes more sense to divide by members
-            #return (2 * self.endowment / members) if self.is_egalitarian else (self.endowment / (members))
 
             return (self.endowment / members) if self.is_egalitarian else (self.endowment / (2 * members))
 
@@ -161,9 +159,10 @@ class Community:
 
     def switch_egalitarian(self):
         self.is_egalitarian = True
-        # for a in self.agents:
-        #     if a.gender == "female" and a.birthplace == self:
-        #         self.grant_membership(a)
+        
+        for a in self.agents:
+            if a.gender == "female" and a.birthplace == self:
+                self.grant_membership(a)
 
     def get_prob_egal(self):
         ratio = Helpers.util(self.get_endowment_pc()) / Helpers.util(self.initial_endowment_pc)

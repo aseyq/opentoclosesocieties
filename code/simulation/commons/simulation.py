@@ -141,9 +141,8 @@ class Simulation(Config):
                 "n_residents_male", "n_residents_female", "n_members", "n_members_male",
                 "n_members_female", "location_x", "location_y"
             ]
-            # append in filename at the beginning comdata
-            file_path = f"com{self.fileobj.filename}"
-            #file_path = "testfile.csv"
+            # append in filename at the beginning simdata
+            file_path = f"sim{self.fileobj.filename}"
 
             # # generate folder if it does not exist
             folder_path = os.path.dirname(file_path)
@@ -151,7 +150,6 @@ class Simulation(Config):
                 os.makedirs(folder_path)
 
 
-            # file_path = 'community_data.csv'
             write_header = not os.path.exists(file_path)
 
             with open(file_path, 'a', newline='', buffering=1024*1024) as csvfile:

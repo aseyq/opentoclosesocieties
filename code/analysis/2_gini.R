@@ -1,6 +1,6 @@
 library(tidyverse)
 
-df_community <- read_csv(here::here("datacloud","processed", "baseline.csv"))
+df_community <- read_csv(here::here("data","processed", "baseline.csv"))
 
 library(ineq)
 df_community %>%
@@ -21,3 +21,18 @@ df_community %>%
   theme_bw()
 
 ggsave("figures/gini.png", width = 6, height = 4)
+
+max_round <- max(df_community$round)
+
+df_community %>%
+  # filter(cohort==1) %>%
+  mutate(wealth_pc_adjusted = if_else(egalitarian,
+    community_wealth / n_residents,
+    community_wealth / (2 * n_members)
+  )) %>%
+  group_by(round, sim) %>%
+  dplyr::summarize(gini = ineq(wealth_pc_adjusted)) %>%
+  group_by(round) %>%
+  dplyr::summarize(gini = mean(gini))  %>%
+  filter(round %in% c(0, max_round))  %>%
+  write_csv(here::here("figures", "gini.csv"))
